@@ -1,4 +1,4 @@
-use actix_files::Files;
+// commenting this out for now - not using the static dirs # use actix_files::Files;
 use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 use my_site::configuration::get_configuration;
 //use my_site::startup::run;
@@ -61,7 +61,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(web::Data::new(tera.clone()))
             .service(index)
-        //            .service(Files::new("/static", "./static").show_files_listing())
+            .service(Files::new("/static", "./static").show_files_listing())
     })
     .bind(address)?
     .run()
