@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }}'s Personal Website</title>
+    <style>
+        body {
+            font-family: Open Sans, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #0077b5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .indented {
+            text-indent: 2em;
+        }
+
+        .social-links li {
+            display: inline;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome!</h1>
+    <p>
+        Hi, I'm {{ name }}, a Senior Linux Engineer who loves building creative
+        solutions, whether through tinkering with hardware or writing clean,
+        efficient code. I’m always exploring new technologies and looking for
+        ways to level up my skills. I love learning new skills and ideas,
+        especially while tinkering with my custom Arch Linux desktop and laptop
+        setups.
+    </p>
+
+    <p>
+        I currently work at Tower Research Capital, where I specialize in Linux
+        systems and lead efforts to automate infrastructure and create a more
+        collaborative engineering environment. Before that, I got my start as a
+        Linux Administrator at RBC, where I developed a solid foundation in
+        system administration and infrastructure support.
+    </p>
+
+    <p>
+        Outside of tech, I roast my own coffee and I spend as much time as I can
+        outdoors where I enjoy snowboarding, surfing, and hiking. Recently, my
+        wife and I completed the New York City Five Boro Bike Tour, riding over
+        40 miles through the city. I’m always up for a bike ride, a trail run,
+        or any activity that keeps me moving and connected to the outdoors.
+    </p>
+
+    <p>
+        My educational background includes a degree in Business Studies with a
+        minor in Computer Science from Drew University, where I also pitched as
+        a starting player on the baseball team. That experience shaped my
+        approach to teamwork, strategy, and perseverance.
+    </p>
+
+    <p>
+        Thanks for visiting - whether you’re into systems engineering, outdoor
+        adventures, or thoughtful conversations, I’d love to connect. Feel free
+        to reach out via the socials below!
+    </p>
+
+    <ul class="social-links">
+        {% for social in social_medias %}
+        <li><a href="{{ social.url }}" target="_blank">{{ social.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        I developed this website using Rust, with Actix Web and Tera, and utilized
+        GitHub's CI/CD pipeline to build and deploy its Docker container to Fly.io.
+    </p>
+    <!--
+    <h2>Some of my career highlights:</h2>
+    <ul>
+        {% for highlight in highlights %}
+            <li>{{ highlight }}</li>
+        {% endfor %}
+    </ul>
+    <p>Connect with me on <a href="{{ linkedin_url }}" target="_blank">LinkedIn</a>.</p>
+-->
+</body>
+
+</html>

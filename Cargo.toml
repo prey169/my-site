@@ -1,0 +1,18 @@
+[package]
+name = "my-site"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+actix-files = "0.6.6"
+actix-web = "4.9"
+config = { version  = "0.15.11", default-features = false, features = ["yaml"] }
+serde = { version = "1.0", features = ["derive"] }
+serde-aux = "4.7.0"
+tera = "1.20"
+
+[dev-dependencies]
+claims = "0.8.0"
