@@ -61,7 +61,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(web::Data::new(tera.clone()))
             .service(index)
-            .service(Files::new("/static", "./static").show_files_listing())
+        //            .service(Files::new("/static", "./static").show_files_listing())
     })
     .bind(address)?
     .run()
